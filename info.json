@@ -1,0 +1,88 @@
+{
+    "name": "impossibleTravellerThreatResponse",
+    "version": "1.0.0",
+    "type": "solutionpack",
+    "local": true,
+    "label": "Impossible Traveller Threat Response",
+    "dependencies": [
+        {
+            "name": "sOARFramework",
+            "type": "solutionpack",
+            "label": "SOAR Framework",
+            "version": "1.0.0",
+            "minVersion": null
+        },
+        {
+            "name": "socSimulator",
+            "type": "solutionpack",
+            "label": "SOC Simulator",
+            "version": "1.0.0",
+            "minVersion": null
+        }
+    ],
+    "prerequisite": [],
+    "publisher": "Fortinet",
+    "description": "This solution pack demonstrates the scenario where successful concurrent authentications were detected to the same account from multiple countries and its mitigation using FortiSIEM.",
+    "summary": null,
+    "help": "https:\/\/github.com\/fortinet-fortisoar\/solution-pack-impossible-traveller-threat-response\/blob\/develop\/README.md",
+    "category": [],
+    "supportInfo": "support@fortinet.com",
+    "fsrMinCompatibility": "7.2.0",
+    "date": "2022-02-17T20:25:04+00:00",
+    "exported_from": "fortisoar.localhost",
+    "exported_by": "CS Admin",
+    "contents": {
+        "modules": {
+            "scenario": {
+                "name": "Scenario",
+                "apiName": "scenario"
+            }
+        },
+        "viewTemplates": {
+            "scenario": [
+                "list",
+                "detail",
+                "form"
+            ]
+        },
+        "playbooks": [
+            {
+                "name": "04 - Use Case - Impossible Traveller Threat Response"
+            }
+        ],
+        "globalVariables": [
+            {
+                "id": 14,
+                "name": "Demo_mode",
+                "value": "true",
+                "default_value": "true"
+            },
+            {
+                "id": 2,
+                "name": "Default_Email",
+                "value": "noreply@example.com",
+                "default_value": null
+            }
+        ],
+        "connectors": [
+            {
+                "name": "Active Directory",
+                "apiName": "activedirectory",
+                "version": "2.2.0"
+            },
+            {
+                "name": "Fortinet FortiSIEM",
+                "apiName": "fortinet-fortisiem",
+                "version": "4.3.0"
+            },
+            {
+                "name": "Utilities",
+                "apiName": "cyops_utilities",
+                "version": "3.2.1"
+            }
+        ],
+        "recordSets": {
+            "scenario": 1
+        }
+    }
+}
