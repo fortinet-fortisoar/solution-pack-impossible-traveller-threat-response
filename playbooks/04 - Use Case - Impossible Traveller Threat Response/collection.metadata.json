@@ -1,0 +1,16 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "04 - Use Case - Impossible Traveller Threat Response",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "fded9da7-922f-48e8-aa71-f2d8e577f55b",
+    "id": 58,
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1645129221.775464,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1645129221.775464,
+    "recordTags": [],
+    "deletedAt": null
+}

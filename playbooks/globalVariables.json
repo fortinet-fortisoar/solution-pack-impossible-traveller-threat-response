@@ -1,0 +1,14 @@
+[
+    {
+        "id": 14,
+        "name": "Demo_mode",
+        "value": "true",
+        "default_value": "true"
+    },
+    {
+        "id": 2,
+        "name": "Default_Email",
+        "value": "noreply@example.com",
+        "default_value": null
+    }
+]
