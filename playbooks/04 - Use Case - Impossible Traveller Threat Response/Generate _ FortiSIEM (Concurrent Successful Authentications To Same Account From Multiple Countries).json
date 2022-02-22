@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Generate > FortiSIEM (Concurrent Successful Authentications To Same Account From Multiple Countries)",
+    "name": "Generate Alert for Concurrent Successful Authentication",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook will generate a demo record for event - Concurrent Successful Authentications To Same Account From Multiple Countries",
+    "description": "Generates a demo record for event - Concurrent Successful Authentications To Same Account From Multiple Countries",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -199,7 +199,11 @@
     ],
     "priority": null,
     "uuid": "37603f90-ab2c-42a0-b183-50e92fdd2fd1",
-    "recordTags": [],
+    "recordTags": [
+        "FSRSolutionPack",
+        "Referenced",
+        "impossibleTravellerThreatResponse-1.0.0"
+    ],
     "id": "541",
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
     "createDate": 1645129221.77551,

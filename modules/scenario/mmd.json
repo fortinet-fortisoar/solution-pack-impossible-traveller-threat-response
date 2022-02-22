@@ -57,7 +57,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "13df4c9f-93db-4440-a614-5719e704c0df",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ configuration }}",
             "descriptions": {
                 "singular": "Configuration"
@@ -102,7 +105,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "d4df5e72-2b91-4ed0-9c44-d06ce26fc592",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ comments }}",
             "descriptions": {
                 "singular": "Comments"
@@ -150,7 +156,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "134f8533-0679-4e96-bb13-afe71b3ede8a",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ title }}",
             "descriptions": {
                 "singular": "Title"
@@ -197,7 +206,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "f68fbbc5-5867-47b0-8c75-b6e10ed10ae2",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ description }}",
             "descriptions": {
                 "singular": "Description"
@@ -244,7 +256,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "8c12d4cc-ed50-438c-9ce8-d85aae5059a8",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ steps }}",
             "descriptions": {
                 "singular": "Steps"
@@ -291,7 +306,10 @@
             "recommend": false,
             "sattrib": "\/api\/3\/staging_model_metadatas\/9a238052-b967-41b2-b952-d2c80a7f9e11",
             "uuid": "fee9aa70-3c93-4345-8ef3-cca247399bd7",
-            "recordTags": [],
+            "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
             "displayName": "{{ createdAlertsID }}",
             "descriptions": {
                 "singular": "Created Alerts ID"
@@ -310,7 +328,10 @@
     },
     "archivalFilters": [],
     "uuid": "9a238052-b967-41b2-b952-d2c80a7f9e11",
-    "recordTags": [],
+    "recordTags": [
+                "FSRSolutionPack",
+                "impossibleTravellerThreatResponse-1.0.0"
+            ],
     "displayName": "{{ title }}",
     "descriptions": {
         "singular": "Scenario",
