@@ -27,6 +27,8 @@
     "help": "https:\/\/github.com\/fortinet-fortisoar\/solution-pack-impossible-traveller-threat-response\/blob\/develop\/README.md",
     "category": [],
     "supportInfo": "support@fortinet.com",
+    "iconLarge": null,
+    "recordTags": [],
     "fsrMinCompatibility": "7.2.0",
     "date": "2022-02-17T20:25:04+00:00",
     "exported_from": "fortisoar.localhost",
@@ -73,7 +75,7 @@
             {
                 "name": "Fortinet FortiSIEM",
                 "apiName": "fortinet-fortisiem",
-                "version": "4.3.0"
+                "version": "4.3.1"
             },
             {
                 "name": "Utilities",
