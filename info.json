@@ -21,6 +21,7 @@
         }
     ],
     "prerequisite": [],
+    "certified": "true",
     "publisher": "Fortinet",
     "description": "This solution pack demonstrates the scenario where successful concurrent authentications were detected to the same account from multiple countries and its mitigation using FortiSIEM.",
     "summary": null,
