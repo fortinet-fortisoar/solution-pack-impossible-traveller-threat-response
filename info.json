@@ -62,11 +62,6 @@
                 "name": "Fortinet FortiSIEM",
                 "apiName": "fortinet-fortisiem",
                 "version": "4.3.1"
-            },
-            {
-                "name": "Utilities",
-                "apiName": "cyops_utilities",
-                "version": "3.2.1"
             }
         ],
         "recordSets": {
