@@ -1240,9 +1240,7 @@
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "4719c477-28f5-4d8d-9022-f70fe75ccb3d",
     "recordTags": [
-        "FSRSolutionPack",
-        "ManualAction",
-        "impossibleTravellerThreatResponse-1.0.0"
+        "ManualAction"
     ],
     "id": "542",
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",

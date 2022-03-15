@@ -11,10 +11,10 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1645129221,
+    "lastModifyDate": 1647184488,
     "collection": "\/api\/3\/workflow_collections\/fded9da7-922f-48e8-aa71-f2d8e577f55b",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/6b5c70c6-69f7-4b57-9b70-08ece7c56e10",
+    "triggerStep": "\/api\/3\/workflow_steps\/745ee163-50c5-4b6b-bcf4-be8fb086932c",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -25,9 +25,9 @@
             },
             "status": null,
             "top": "140",
-            "left": "211",
+            "left": "220",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "5200017d-0dd5-4d7c-ab2e-46b281cb69a1"
+            "uuid": "fc7c43c3-207c-42a1-a6e0-cd9307cf2495"
         },
         {
             "@type": "WorkflowStep",
@@ -37,99 +37,33 @@
                 "for_each": {
                     "item": "{{vars.alert_data.associated_events.event_details}}",
                     "__bulk": true,
-                    "condition": ""
+                    "parallel": false,
+                    "condition": "",
+                    "batch_size": 100
                 },
                 "resource": {
                     "name": "{{vars.alert_data.incident_data.attributes.eventName}}",
-                    "type": {
-                        "id": 309,
-                        "@id": "\/api\/3\/picklists\/72459a5f-7759-4cff-a8ac-fa673113c4d0",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": null,
-                        "display": "Concurrent Login",
-                        "listName": "\/api\/3\/picklist_names\/a7087b9c-5660-495f-a8ac-c3b198ddb8c2",
-                        "itemValue": "Concurrent Login",
-                        "orderIndex": 25
-                    },
-                    "state": {
-                        "id": 220,
-                        "@id": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": null,
-                        "display": "New",
-                        "listName": "\/api\/3\/picklist_names\/2f9ed741-25fe-475a-9f12-64336288eebf",
-                        "itemValue": "New",
-                        "orderIndex": 0
-                    },
+                    "type": "\/api\/3\/picklists\/72459a5f-7759-4cff-a8ac-fa673113c4d0",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
                     "source": "FortiSIEM",
-                    "status": {
-                        "id": 21,
-                        "@id": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": null,
-                        "display": "Open",
-                        "listName": "\/api\/3\/picklist_names\/33e964a9-d607-49f2-813c-7ce46141815a",
-                        "itemValue": "Open",
-                        "orderIndex": 1
-                    },
-                    "severity": "{{\"Severity\" | picklist(vars.alert_data.incident_data.attributes.eventSeverityCat, \"@id\")}}",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "{{\"Severity\" | picklist(vars.alert_data.incident_data.attributes.eventSeverityCat | capitalize, \"@id\")}}",
                     "sourceId": "{{vars.alert_data.incident_data.nid}}",
                     "__replace": "false",
                     "sourcedata": "{{vars.alert_data | toJSON}}",
-                    "ackSlaStatus": {
-                        "id": 289,
-                        "@id": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": "#808080",
-                        "display": "Awaiting Action",
-                        "listName": "\/api\/3\/picklist_names\/fe36a8f2-fcba-4221-b4ab-1081f596b153",
-                        "itemValue": "Awaiting Action",
-                        "orderIndex": 2
-                    },
-                    "closureReason": {
-                        "id": 251,
-                        "@id": "\/api\/3\/picklists\/8590c81e-3307-4645-97f5-c3e1bec4e05a",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": null,
-                        "display": "Tasks Completed",
-                        "listName": "\/api\/3\/picklist_names\/4ebacea1-88cd-4ea8-9dcc-385bea42cc59",
-                        "itemValue": "Tasks Completed",
-                        "orderIndex": 0
-                    },
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "closureReason": "\/api\/3\/picklists\/8590c81e-3307-4645-97f5-c3e1bec4e05a",
                     "destinationIp": "{{vars.alert_data.incident_data.attributes.destIpAddr}}",
-                    "respSlaStatus": {
-                        "id": 289,
-                        "@id": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": "#808080",
-                        "display": "Awaiting Action",
-                        "listName": "\/api\/3\/picklist_names\/fe36a8f2-fcba-4221-b4ab-1081f596b153",
-                        "itemValue": "Awaiting Action",
-                        "orderIndex": 2
-                    },
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
                     "priorityWeight": 1,
                     "bytesTransferred": "{{vars.alert_data.incident_data.attributes.incidentDetail}}",
-                    "escalatedtoincident": {
-                        "id": 210,
-                        "@id": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": "#808080",
-                        "display": "No",
-                        "listName": "\/api\/3\/picklist_names\/e131cc54-9ae4-43c9-b830-af6e331fe024",
-                        "itemValue": "No",
-                        "orderIndex": 1
-                    }
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0
                 },
-                "_showJson": false,
+                "_showJson": true,
                 "operation": "Overwrite",
                 "collection": "\/api\/3\/upsert\/alerts",
+                "__recommend": [],
                 "fieldOperation": {
                     "recordTags": "Overwrite"
                 },
@@ -139,7 +73,7 @@
             "top": "240",
             "left": "380",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "uuid": "6c502dd5-a1d7-4d64-8ccb-0ba8432faf3e"
+            "uuid": "6f0ff476-f622-482a-ae0f-e5c03388043a"
         },
         {
             "@type": "WorkflowStep",
@@ -152,7 +86,7 @@
             "top": "40",
             "left": "40",
             "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-            "uuid": "6b5c70c6-69f7-4b57-9b70-08ece7c56e10"
+            "uuid": "745ee163-50c5-4b6b-bcf4-be8fb086932c"
         },
         {
             "@type": "WorkflowStep",
@@ -165,51 +99,44 @@
             "top": "360",
             "left": "560",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "b1767f4f-9a92-46a6-a8de-9605ed79f710"
+            "uuid": "cdd9064f-7cdd-47db-b9c2-144f3efdf398"
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Configuration -> Create Alert",
-            "targetStep": "\/api\/3\/workflow_steps\/6c502dd5-a1d7-4d64-8ccb-0ba8432faf3e",
-            "sourceStep": "\/api\/3\/workflow_steps\/5200017d-0dd5-4d7c-ab2e-46b281cb69a1",
+            "targetStep": "\/api\/3\/workflow_steps\/6f0ff476-f622-482a-ae0f-e5c03388043a",
+            "sourceStep": "\/api\/3\/workflow_steps\/fc7c43c3-207c-42a1-a6e0-cd9307cf2495",
             "label": null,
             "isExecuted": false,
-            "uuid": "671e366d-6491-4703-a6ce-c50963abed42"
+            "uuid": "fb9c20cc-a83d-423d-9bbb-ee80042e2945"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/5200017d-0dd5-4d7c-ab2e-46b281cb69a1",
-            "sourceStep": "\/api\/3\/workflow_steps\/6b5c70c6-69f7-4b57-9b70-08ece7c56e10",
+            "targetStep": "\/api\/3\/workflow_steps\/fc7c43c3-207c-42a1-a6e0-cd9307cf2495",
+            "sourceStep": "\/api\/3\/workflow_steps\/745ee163-50c5-4b6b-bcf4-be8fb086932c",
             "label": null,
             "isExecuted": false,
-            "uuid": "337eadc6-ff8a-4608-a274-cd2cd9b7e58c"
+            "uuid": "f69852d5-1ef1-42f2-b0f6-ddb8a353a9aa"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Create Alert -> Set Output",
-            "targetStep": "\/api\/3\/workflow_steps\/b1767f4f-9a92-46a6-a8de-9605ed79f710",
-            "sourceStep": "\/api\/3\/workflow_steps\/6c502dd5-a1d7-4d64-8ccb-0ba8432faf3e",
+            "targetStep": "\/api\/3\/workflow_steps\/cdd9064f-7cdd-47db-b9c2-144f3efdf398",
+            "sourceStep": "\/api\/3\/workflow_steps\/6f0ff476-f622-482a-ae0f-e5c03388043a",
             "label": null,
             "isExecuted": false,
-            "uuid": "9b759874-9579-474a-80cf-0899abcac7cf"
+            "uuid": "a267d58c-13c6-401f-9077-d7390617f348"
         }
     ],
     "priority": null,
     "uuid": "37603f90-ab2c-42a0-b183-50e92fdd2fd1",
-    "recordTags": [
-        "FSRSolutionPack",
-        "Referenced",
-        "impossibleTravellerThreatResponse-1.0.0"
-    ],
-    "id": "541",
-    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1645129221.77551,
-    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1645129221.77551,
     "owners": [],
     "isPrivate": false,
-    "deletedAt": null
+    "deletedAt": null,
+    "recordTags": [
+        "Referenced"
+    ]
 }
