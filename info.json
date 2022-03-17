@@ -35,7 +35,7 @@
     "contents": {
         "playbooks": [
             {
-                "name": "04 - Use Case - Impossible Traveller Threat Response"
+                "name": "02 - Use Case - Impossible Traveller Threat Response"
             }
         ],
         "globalVariables": [
