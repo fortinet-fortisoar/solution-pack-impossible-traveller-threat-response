@@ -5,7 +5,6 @@
         "category": "Directory Service",
         "description": "Active Directory (AD) is a directory service that Microsoft developed for Windows domain networks. You can directly query AD to retrieve information about users, groups, and computers, in an organization, by using the Lightweight Directory Access Protocol (LDAP) to directly query the AD.",
         "publisher": null,
-        "version": "2.2.0",
         "operation_roles": {
             "add_object": [],
             "get_all_object_details": [],
@@ -24,9 +23,7 @@
         },
         "configurations": [],
         "dataImports": [],
-        "rpm_name": "cyops-connector-activedirectory-2.2.0",
-        "install_mode": "rpm",
-        "installer_path": "cyops-connector-activedirectory-2.2.0"
+        "install_mode": "rpm"
     },
     {
         "name": "fortinet-fortisiem",
@@ -34,7 +31,6 @@
         "category": "SIEM",
         "description": "FortiSIEM provides integrations that allow you to query and make changes to the CMDB, query events, and send incident notifications. Provide actions like get incidents, comment incident, cleared incident, get device details, get monitored organizations, report related actions and get all associated events for an incident from FortiSIEM.",
         "publisher": null,
-        "version": "4.3.0",
         "operation_roles": {
             "get_incidents": [],
             "get_incident_details": [],
@@ -66,8 +62,6 @@
         },
         "configurations": [],
         "dataImports": [],
-        "rpm_name": "cyops-connector-fortinet-fortisiem-4.3.0",
-        "install_mode": "rpm",
-        "installer_path": "cyops-connector-fortinet-fortisiem-4.3.0"
+        "install_mode": "rpm"
     }
 ]
