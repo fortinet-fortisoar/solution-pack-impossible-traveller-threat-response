@@ -69,7 +69,10 @@ Launch the "Investigate Concurrent Login from Different Geo Location" playbook a
 4. Playbook Collection(s)
     - 02 - Use Case - Impossible Traveller Threat Response(2):
 
-|**Playbook Name**|**Description**|
-| :- | :- |
-|Generate Alert for Concurrent Successful Authentication | Generates a demo record for the event - Concurrent Successful Authentications To Same Account From Multiple Countries|
-|Investigate Concurrent Login from Different Geo Location | Investigates alerts of type 'Concurrent Login' by checking if the source IP address is in the specified CIDR range, and then performs remediation tasks based on the result.|
+    |**Playbook Name**|**Description**|
+    | :- | :- |
+    |Generate Alert for Concurrent Successful Authentication | Generates a demo record for the event - Concurrent Successful Authentications To Same Account From Multiple Countries|
+    |Investigate Concurrent Login from Different Geo Location | Investigates alerts of type 'Concurrent Login' by checking if the source IP address is in the specified CIDR range, and then performs remediation tasks based on the result.|
+
+     **Warning:** It is recommended to clone these Playbooks before any customizations to avoid loss of information while upgrading the Solution Pack.
+
