@@ -18,7 +18,7 @@
             "minVersion": null
         }
     ],
-    "prerequisite": "",
+    "prerequisite": "* Configure the Fortinet FortiSIEM connector to ingest events\n* Configure the Microsoft Active Directory connector to manage user access control\n* Configure the Fortinet FortiGate connector to block malicious indicators on the firewall",
     "certified": "false",
     "publisher": "Fortinet",
     "description": "This solution pack demonstrates the scenario where successful concurrent authentications were detected to the same account from multiple countries and its mitigation using FortiSIEM, FortiGate and Microsoft Active Directory.",
@@ -27,31 +27,22 @@
     "supportInfo": "",
     "iconLarge": null,
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-04-08T19:57:15+00:00",
+    "postInstallConfig": null,
+    "date": "2023-11-02T11:02:39+00:00",
     "contents": {
         "playbooks": [
             {
                 "name": "02 - Use Case - Impossible Traveller Threat Response"
             }
         ],
-        "globalVariables": [
-            {
-                "id": 14,
-                "name": "Demo_mode",
-                "value": "true",
-                "default_value": "true"
-            },
-            {
-                "id": 2,
-                "name": "Default_Email",
-                "value": "noreply@example.com",
-                "default_value": null
-            }
-        ],
         "connectors": [
             {
                 "name": "Active Directory",
                 "apiName": "activedirectory"
+            },
+            {
+                "name": "Fortinet FortiGate",
+                "apiName": "fortigate-firewall"
             },
             {
                 "name": "Fortinet FortiSIEM",

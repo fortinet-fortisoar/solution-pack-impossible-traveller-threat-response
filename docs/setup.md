@@ -1,4 +1,4 @@
-| [Home](https://github.com/fortinet-fortisoar/solution-pack-impossible-traveller-threat-response/blob/develop/README.md) |
+[Home](../README.md) |
 |--------------------------------------------|
 
 # Installation
@@ -17,9 +17,15 @@
 
 # Configuration
 
-For optimal performance of **Impossible Traveller Threat Response** solution pack, you can install and configure:
+For optimal performance of **Impossible Traveller Threat Response** solution pack, you can install and configure the connectors that help with the following:
 
-- A SIEM solution
+- **Fortinet FortiSIEM** - FortiSIEM provides integrations that allow you to query and make changes to the CMDB, query events, and send incident notifications.
     - To configure and use the Fortinet FortiSIEM connector as a source of data ingestion, refer to [Configuring Fortinet FortiSIEM](https://docs.fortinet.com/document/fortisoar/4.3.2/fortinet-fortisiem/278/fortinet-fortisiem-v4-3-2)
-- A user database solution to get users and asset details
-    - - To configure and use Microsoft's Active Directory connector, refer to [Configuring Microsoft's Active Directory](https://docs.fortinet.com/document/fortisoar/2.2.0/active-directory/154/active-directory-v2-2-0#Configuration_parameters)
+- **Microsoft Active Directory** - Helps directly query AD to retrieve information about users, groups, and computers, in an organization, by using the Lightweight Directory Access Protocol (LDAP)
+    - To configure and use Microsoft's Active Directory connector, refer to [Configuring Microsoft's Active Directory](https://docs.fortinet.com/document/fortisoar/2.2.0/active-directory/154/active-directory-v2-2-0#Configuration_parameters)
+- **Fortinet FortiGate** - FortiGate is an enterprise firewall provide high performance, consolidated advanced security and granular visibility for broad protection across the entire digital attack surface.
+    - To configure and use the Fortinet FortiGate connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/fortisoar/connectors/fortigate_firewall)
+
+# Next Steps
+| [Usage](./usage.md) | [Contents](./contents.md) |
+|---------------------|---------------------------|
