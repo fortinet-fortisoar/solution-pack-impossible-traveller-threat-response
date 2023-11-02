@@ -1,6 +1,6 @@
 {
     "name": "impossibleTravellerThreatResponse",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "solutionpack",
     "local": true,
     "label": "Impossible Traveller Threat Response",
@@ -9,22 +9,20 @@
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "version": "1.0.0",
             "minVersion": null
         },
         {
             "name": "socSimulator",
             "type": "solutionpack",
             "label": "SOC Simulator",
-            "version": "1.0.1",
             "minVersion": null
         }
     ],
     "prerequisite": "",
     "certified": "false",
     "publisher": "Fortinet",
-    "description": "This solution pack demonstrates the scenario where successful concurrent authentications were detected to the same account from multiple countries and its mitigation using FortiSIEM and Microsoft Active Directory.",
-    "help": "https:\/\/github.com\/fortinet-fortisoar\/solution-pack-impossible-traveller-threat-response\/blob\/develop\/README.md",
+    "description": "This solution pack demonstrates the scenario where successful concurrent authentications were detected to the same account from multiple countries and its mitigation using FortiSIEM, FortiGate and Microsoft Active Directory.",
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-impossible-traveller-threat-response/blob/release/1.0.1/README.md",
     "category": [],
     "supportInfo": "",
     "iconLarge": null,
