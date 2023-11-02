@@ -68,14 +68,6 @@
             "description": null,
             "arguments": {
                 "when": "{{(vars.steps.Block_Malicious_IPs.data['newly_blocked'] | length > 0) or (vars.steps.Block_Malicious_IPs.data['already_blocked'] | length > 0)}}",
-                "message": {
-                    "tags": [],
-                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
-                    "tenant": "",
-                    "content": "<p>{{vars.indicator_value}} has been&nbsp;<strong>Blocked<\/strong> on FortiGate Firewall<\/p>",
-                    "records": "",
-                    "parentstepid": "\/api\/3\/workflow_steps\/aadf2ebc-92b2-4909-a088-9c79bb9ffb38"
-                },
                 "resource": {
                     "indicatorStatus": "\/api\/3\/picklists\/fa29fe48-f01e-476f-bb33-c910f5795b57"
                 },
@@ -102,14 +94,6 @@
             "description": null,
             "arguments": {
                 "when": "{{vars.steps.Block_Malicious_IPs.data['error_with_block'] | length > 0}}",
-                "message": {
-                    "tags": [],
-                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
-                    "tenant": "",
-                    "content": "<p>{{vars.indicatorValue}} was <strong>Not Blocked <\/strong>on FortiGate Firewall<\/p>",
-                    "records": "",
-                    "parentstepid": "\/api\/3\/workflow_steps\/ad0d1f66-1036-42d0-8515-5c92635c78cf"
-                },
                 "resource": {
                     "indicatorStatus": "\/api\/3\/picklists\/2f5cff61-fbff-4bb3-96be-302b78a9fb47"
                 },
