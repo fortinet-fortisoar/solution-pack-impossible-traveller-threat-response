@@ -2,25 +2,25 @@
     {
         "name": "activedirectory",
         "label": "Active Directory",
-        "category": "Directory Service",
+        "category": [
+            "Directory Service"
+        ],
         "description": "Active Directory (AD) is a directory service that Microsoft developed for Windows domain networks. You can directly query AD to retrieve information about users, groups, and computers, in an organization, by using the Lightweight Directory Access Protocol (LDAP) to directly query the AD.",
-        "publisher": null,
-        "operation_roles": {
-            "add_object": [],
-            "get_all_object_details": [],
-            "get_specific_object_details": [],
-            "update_object": [],
-            "delete_object": [],
-            "add_group_members": [],
-            "remove_group_members": [],
-            "advanced_search": [],
-            "global_search": [],
-            "enable_user_account": [],
-            "disable_user_account": [],
-            "enable_computer": [],
-            "disable_computer": [],
-            "reset_password": []
-        },
+        "publisher": "Fortinet",
+        "operation_roles": [],
+        "configurations": [],
+        "dataImports": [],
+        "install_mode": "rpm"
+    },
+    {
+        "name": "fortigate-firewall",
+        "label": "Fortinet FortiGate",
+        "category": [
+            "Firewall and Network Protection"
+        ],
+        "description": "Fortinet FortiGate enterprise firewall provide high performance, consolidated advanced security and granular visibility for broad protection across the entire digital attack surface.",
+        "publisher": "Fortinet",
+        "operation_roles": [],
         "configurations": [],
         "dataImports": [],
         "install_mode": "rpm"
@@ -28,38 +28,12 @@
     {
         "name": "fortinet-fortisiem",
         "label": "Fortinet FortiSIEM",
-        "category": "SIEM",
+        "category": [
+            "Analytics and SIEM"
+        ],
         "description": "FortiSIEM provides integrations that allow you to query and make changes to the CMDB, query events, and send incident notifications. Provide actions like get incidents, comment incident, cleared incident, get device details, get monitored organizations, report related actions and get all associated events for an incident from FortiSIEM.",
-        "publisher": null,
-        "operation_roles": {
-            "get_incidents": [],
-            "get_incident_details": [],
-            "update_incident": [],
-            "get_associated_events": [],
-            "incident_comment": [],
-            "clear_incident": [],
-            "change_incident_severity": [],
-            "change_incident_resolution": [],
-            "search_events": [],
-            "get_event_details": [],
-            "get_devices_details": [],
-            "get_devices_details_in_address": [],
-            "get_device_info": [],
-            "get_monitored_devices": [],
-            "get_monitored_organizations": [],
-            "get_org_name_by_org_id": [],
-            "run_report": [],
-            "get_incident_attributes": [],
-            "get_events_by_query_id": [],
-            "create_watchlist_group": [],
-            "get_watch_lists": [],
-            "get_watch_list_entries_count": [],
-            "get_watch_list_entry": [],
-            "add_watch_list_entries_to_watch_list_groups": [],
-            "update_watch_list_entry": [],
-            "delete_watch_list_entry": [],
-            "delete_watch_list": []
-        },
+        "publisher": "Fortinet",
+        "operation_roles": [],
         "configurations": [],
         "dataImports": [],
         "install_mode": "rpm"

@@ -1,4 +1,4 @@
-| [Home](https://github.com/fortinet-fortisoar/solution-pack-impossible-traveller-threat-response/blob/develop/README.md) |
+[Home](../README.md) |
 |--------------------------------------------|
 
 # Usage
@@ -12,14 +12,19 @@ To understand the process FortiSOAR follows to respond to phishing emails using 
 
 This scenario generates an example alert of type **Concurrent Login** in FortiSOAR's **Alerts** module.
 
-Navigate to the generated alert and note that destination IP address is present to analyze the case.
+Navigate to the generated alert and note that source and destination IP addresses is present to analyze the case.
 
 **Investigate Concurrent Login from Different Geo Location:**
 
 Users can launch the **Investigate Concurrent Login from Different Geo Location** playbook from this alert. This playbook performs following automated tasks:
 
-- Identify the geolocation of the concurrent login
+- Identify the geo location of the concurrent login
+- Block the malicious Source IP Addresses on this Fortinet FortiGate firewall
 - Get the user's details, who is attempting concurrent login, from Microsoft's Active Directory
 - Check the user's login activity for the last 4 hours
 - Disable the user for an hour with the IT team's approval
 - Reset the user's password, if the user attempts to log in again
+
+# Next Steps
+| [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Contents](./contents.md) |
+| ----------------------------------------- | ------------------------------------------- | --------------------------- |
