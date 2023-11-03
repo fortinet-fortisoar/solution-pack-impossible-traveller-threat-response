@@ -312,7 +312,7 @@
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "alerts": "{{vars.input.records[0]['@id']}}",
                     "people": [],
-                    "content": "<p>Below are the user's 4 hours of login data,displaying top 5 logs:<\/p>\n<p>{{vars.steps.Get_User_Login_Summary.data}}<\/p>",
+                    "content": "<p>Here are the user's top 5 login logs from the past 4 hours:<\/p>\n<p>{{vars.steps.Get_User_Login_Summary.data}}<\/p>",
                     "__replace": "",
                     "isImportant": false,
                     "peopleUpdated": false
@@ -639,11 +639,11 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "{{vars.input.records[0].tenant['@id']}}",
-                    "content": "<p>User <strong>{{vars.userid}}<\/strong> account is disabled for 1 hour<\/p>",
+                    "content": "<p>User <strong>{{vars.steps.Retrieve_Users_Details_From_AD.data.entries[0].attributes.name}}({{vars.userid}})<\/strong> account is disabled for 1 hour.<\/p>",
                     "records": "",
                     "parentstepid": "\/api\/3\/workflow_steps\/bafac9ce-6a70-4f37-b402-1e4b79d1d248"
                 },
-                "version": "2.3.0",
+                "version": "2.4.0",
                 "connector": "activedirectory",
                 "operation": "disable_user_account",
                 "mock_result": "{\n     \"description\": \"Disabled User Account\",\n     \"type\": \"Email\",\n     \"referrals\": \"\",\n     \"dn\": \"CN=Tony Stark,CN=Users,DC=cspune,DC=com\",\n     \"result\": \"Disabled\",\n     \"message\": \"Successful\"\n}",
@@ -863,7 +863,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "{{vars.input.records[0].tenant['@id']}}",
-                    "content": "Notified User, Manager, IT Team about Password Reset though Email, please check communications for more details.",
+                    "content": "<p>Notified User, Manager and IT Team about Password Reset though Email. Please check communications for more details.<\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/86b49e1d-cb6e-4c99-bba4-49fa12ad22e9"
                 },
@@ -909,11 +909,11 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "{{vars.input.records[0].tenant['@id']}}",
-                    "content": "<p>User password has been reset<\/p>",
+                    "content": "<p>User <strong>{{vars.steps.Retrieve_Users_Details_From_AD.data.entries[0].attributes.name}}({{vars.userid}})<\/strong> password has been reset.<\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/9326ed3e-f6ab-4eed-b708-c5248b7a7f8e"
                 },
-                "version": "2.3.0",
+                "version": "2.4.0",
                 "connector": "activedirectory",
                 "operation": "reset_password",
                 "mock_result": "{\n     \"description\": \"Reset User Password\",\n     \"type\": \"Email\",\n     \"referrals\": \"\",\n     \"dn\": \"CN=Tony Stark,CN=Users,DC=cspune,DC=com\",\n     \"result\": \"Reset Password\",\n     \"message\": \"Successful\"\n}",
@@ -1154,21 +1154,11 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "{{vars.input.records[0].tenant['@id']}}",
-                    "content": "Investigating Potential {{vars.input.records[0].type.itemValue}}, with following fields of interest:\n{% if vars.input.records[0].domain %}Domain: {{vars.input.records[0].domain -}}{% endif %}\n{% if vars.input.records[0].sourceIp %}SourceIP: {{ vars.input.records[0].sourceIp -}}{% endif %}\n{% if vars.input.records[0].destinationIp %}DestinationIP: {{vars.input.records[0].destinationIp -}}{% endif %}\n{% if vars.input.records[0].fileHash %}File Hash: {{vars.input.records[0].fileHash -}}{% endif %}\n{% if vars.input.records[0].computerName %}ComputerName: {{vars.input.records[0].computerName -}}{% endif %}\n{% if vars.input.records[0].processName %}Process: {{vars.input.records[0].processName -}}{% endif %}\n{% if vars.input.records[0].sourceProcess %}SourceProcess: {{vars.input.records[0].sourceProcess -}}{% endif %}\n<br>\n\nObserved Concurrent Login To Account from Below different Geo Location\n{% for i in vars.alert_metadata.associated_events.event_details %}\n* Location : {{i[0].attributes.srcGeoCountry}}\n* SourceIP : {{i[0].attributes.srcIpAddr}}\n {%endfor%}",
+                    "content": "<p>Investigating Potential {{vars.input.records[0].type.itemValue}}, with following fields of interest: <br><br>{% if vars.input.records[0].domain %}<strong>Domain<\/strong>: {{vars.input.records[0].domain -}}<br>{% endif %} {% if vars.input.records[0].sourceIp %}<strong>SourceIP<\/strong>: {{ vars.input.records[0].sourceIp -}}<br>{% endif %} {% if vars.input.records[0].destinationIp %}<strong>DestinationIP<\/strong>: {{vars.input.records[0].destinationIp -}}<br>{% endif %} {% if vars.input.records[0].fileHash %}<strong>File Hash<\/strong>: {{vars.input.records[0].fileHash -}}<br>{% endif %} {% if vars.input.records[0].computerName %}<strong>ComputerName<\/strong>: {{vars.input.records[0].computerName -}}<br>{% endif %} {% if vars.input.records[0].processName %}<strong>Process<\/strong>: {{vars.input.records[0].processName -}}<br>{% endif %} {% if vars.input.records[0].sourceProcess %}<strong>SourceProcess<\/strong>: {{vars.input.records[0].sourceProcess -}}<br>{% endif %} <br>Observed Concurrent Login To Account from Below different Geo Location: {% for i in vars.alert_metadata.associated_events.event_details %}<\/p>\n<ul>\n<li>SourceIP : {{i[0].attributes.srcIpAddr}} -&gt; Location : {{i[0].attributes.srcGeoCountry}}<\/li>\n<\/ul>\n<p>{%endfor%}<\/p>",
                     "records": ""
                 },
                 "resource": {
-                    "status": {
-                        "id": 113,
-                        "@id": "\/api\/3\/picklists\/758925e7-629c-46d8-89db-fb36f5fbe88a",
-                        "icon": null,
-                        "@type": "Picklist",
-                        "color": null,
-                        "display": "Investigating",
-                        "listName": "\/api\/3\/picklist_names\/33e964a9-d607-49f2-813c-7ce46141815a",
-                        "itemValue": "Investigating",
-                        "orderIndex": 2
-                    }
+                    "status": "\/api\/3\/picklists\/758925e7-629c-46d8-89db-fb36f5fbe88a"
                 },
                 "_showJson": false,
                 "operation": "Append",
@@ -1559,7 +1549,7 @@
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "fea64bae-d90e-46d5-ab17-86a67fd39efe"
+            "uuid": "d69859c3-1b3f-408b-a5d9-7c33efc96b95"
         },
         {
             "@type": "WorkflowRoute",
