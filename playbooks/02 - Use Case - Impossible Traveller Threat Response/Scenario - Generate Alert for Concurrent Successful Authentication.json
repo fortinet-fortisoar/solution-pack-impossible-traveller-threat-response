@@ -45,7 +45,7 @@
                     "name": "{{vars.alert_data.incident_data.attributes.eventName}}",
                     "type": "\/api\/3\/picklists\/72459a5f-7759-4cff-a8ac-fa673113c4d0",
                     "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
+                    "source": "Fortinet FortiSIEM",
                     "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
                     "severity": "{{\"Severity\" | picklist(vars.alert_data.incident_data.attributes.eventSeverityCat | capitalize, \"@id\")}}",
                     "sourceId": "{{vars.alert_data.incident_data.nid}}",

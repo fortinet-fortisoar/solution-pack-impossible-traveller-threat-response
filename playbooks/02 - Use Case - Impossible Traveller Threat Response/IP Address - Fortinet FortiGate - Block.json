@@ -11,7 +11,9 @@
     "remoteExecutableFlag": false,
     "parameters": [
         "indicatorIRI",
-        "indicatorValue"
+        "indicatorValue",
+        "ipBlockPolicyName",
+        "addressGroupName"
     ],
     "synchronous": false,
     "collection": "\/api\/3\/workflow_collections\/fded9da7-922f-48e8-aa71-f2d8e577f55b",
@@ -24,12 +26,15 @@
             "description": null,
             "arguments": {
                 "name": "Fortinet FortiGate",
-                "config": "edce8c68-5571-4894-9e08-48d3c16ce41c",
+                "config": "fee29da2-6131-4160-b716-7c9e631f1c4f",
                 "params": {
+                    "ip": "{{vars.indicator_value}}",
                     "vdom": "",
-                    "method": "Quarantine Based",
-                    "ip_addresses": "{{vars.indicator_value}}",
-                    "time_to_live": "12 Hour"
+                    "method": "Policy Based",
+                    "ip_type": "IPv4",
+                    "ngfw_mode": "Profile Based",
+                    "ip_group_name": "{{vars.input.params.addressGroupName}}",
+                    "ip_block_policy": "{{vars.input.params.ipBlockPolicyName}}"
                 },
                 "version": "5.2.3",
                 "connector": "fortigate-firewall",
