@@ -25,6 +25,10 @@ Users can launch the **Investigate Concurrent Login from Different Geo Location*
 - Disable the user for an hour with the IT team's approval
 - Reset the user's password, if the user attempts to log in again
 
+> **Note:** Please replace the names of the 'IP Block Policy' and 'Address Group' with the names configured on your FortiGate firewall in the 'Configuration' step of the "Investigate Concurrent Login from Different Geo Location" playbook.
+
+![IP Block Policy](./res/ip-block-policy.png)
+
 # Next Steps
 | [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Contents](./contents.md) |
 | ----------------------------------------- | ------------------------------------------- | --------------------------- |
