@@ -4,20 +4,20 @@
 # Installation
 
 1. To install a solution pack, click **Content Hub** > **Discover**.
-2. From the list of solution pack that appears, search for and select **Impossible Traveller Threat Response**.
-3. Click the **Impossible Traveller Threat Response** solution pack card.
-4. Click **Install** on the bottom to begin installation.stallation
+2. From the list of solution pack that appears, search for **Impossible Traveler Threat Response**.
+3. Click the **Impossible Traveler Threat Response** solution pack card.
+4. Click **Install** on the lower part of the screen to begin installation.
 
 ## Prerequisites
 
-|Solution Pack Name|Purpose|
-| :- | :- |
-|SOAR Framework|Required for Incident Response modules|
-|SOC Simulator|Required for Scenario Module and SOC Simulator connector|
+| Solution Pack Name | Version | Purpose                                                  |
+|:-------------------|:--------|:---------------------------------------------------------|
+| SOAR Framework     | v2.2.1  | Required for Incident Response modules                   |
+| SOC Simulator      | v1.0.1  | Required for Scenario Module and SOC Simulator connector |
 
 # Configuration
 
-For optimal performance of **Impossible Traveller Threat Response** solution pack, you can install and configure the connectors that help with the following:
+For optimal performance of **Impossible Traveler Threat Response** solution pack, you can install and configure the following connectors:
 
 - **Fortinet FortiSIEM** - FortiSIEM provides integrations that allow you to query and make changes to the CMDB, query events, and send incident notifications.
     - To configure and use the Fortinet FortiSIEM connector as a source of data ingestion, refer to [Configuring Fortinet FortiSIEM](https://docs.fortinet.com/document/fortisoar/4.3.2/fortinet-fortisiem/278/fortinet-fortisiem-v4-3-2)
@@ -27,5 +27,6 @@ For optimal performance of **Impossible Traveller Threat Response** solution pac
     - To configure and use the Fortinet FortiGate connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/fortisoar/connectors/fortigate_firewall)
 
 # Next Steps
+
 | [Usage](./usage.md) | [Contents](./contents.md) |
 |---------------------|---------------------------|

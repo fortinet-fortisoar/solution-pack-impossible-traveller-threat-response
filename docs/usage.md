@@ -10,11 +10,11 @@ To understand the process FortiSOAR follows to respond to phishing emails using 
 
 ## Concurrent Successful Authentications
 
-This scenario generates an example alert of type **Concurrent Login** in FortiSOAR's **Alerts** module.
+This scenario generates an example alert of type **Concurrent Login** in FortiSOAR&trade;'s **Alerts** module.
 
 Navigate to the generated alert and note that source and destination IP addresses is present to analyze the case.
 
-**Investigate Concurrent Login from Different Geo Location:**
+### Investigate Concurrent Login from Different Geo Location
 
 Users can launch the **Investigate Concurrent Login from Different Geo Location** playbook from this alert. This playbook performs following automated tasks:
 
@@ -25,10 +25,11 @@ Users can launch the **Investigate Concurrent Login from Different Geo Location*
 - Disable the user for an hour with the IT team's approval
 - Reset the user's password, if the user attempts to log in again
 
-> **Note:** Please replace the names of the 'IP Block Policy' and 'Address Group' with the names configured on your FortiGate firewall in the 'Configuration' step of the "Investigate Concurrent Login from Different Geo Location" playbook.
+> **NOTE:** Replace the names of the 'IP Block Policy' and 'Address Group' with the names configured on your FortiGate firewall in the 'Configuration' step of the "Investigate Concurrent Login from Different Geo Location" playbook.
 
 ![IP Block Policy](./res/ip-block-policy.png)
 
 # Next Steps
+
 | [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Contents](./contents.md) |
-| ----------------------------------------- | ------------------------------------------- | --------------------------- |
+|-----------------------------------------|-------------------------------------------|---------------------------|
