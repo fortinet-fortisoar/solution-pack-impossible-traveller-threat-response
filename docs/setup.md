@@ -12,8 +12,8 @@
 
 | Solution Pack Name | Version | Purpose                                                  |
 |:-------------------|:--------|:---------------------------------------------------------|
-| SOAR Framework     | v2.2.1  | Required for Incident Response modules                   |
-| SOC Simulator      | v1.0.1  | Required for Scenario Module and SOC Simulator connector |
+| SOAR Framework     | v2.0.2  | Required for Incident Response modules                   |
+| SOC Simulator      | v1.0.2  | Required for Scenario Module and SOC Simulator connector |
 
 # Configuration
 
