@@ -1,7 +1,7 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Generate Alert for Concurrent Successful Authentication",
+    "name": "Scenario - Generate Alert for Concurrent Successful Authentication",
     "aliasName": null,
     "tag": null,
     "description": "Generates a demo record for event - Concurrent Successful Authentications To Same Account From Multiple Countries",
@@ -11,10 +11,9 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1647184488,
     "collection": "\/api\/3\/workflow_collections\/fded9da7-922f-48e8-aa71-f2d8e577f55b",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/745ee163-50c5-4b6b-bcf4-be8fb086932c",
+    "triggerStep": "\/api\/3\/workflow_steps\/ac34a7e9-e692-4c9a-b572-01fcd3ff3af2",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -27,7 +26,8 @@
             "top": "140",
             "left": "220",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "fc7c43c3-207c-42a1-a6e0-cd9307cf2495"
+            "group": null,
+            "uuid": "f92d68ba-1de4-4068-aa61-37a0598c6266"
         },
         {
             "@type": "WorkflowStep",
@@ -45,10 +45,11 @@
                     "name": "{{vars.alert_data.incident_data.attributes.eventName}}",
                     "type": "\/api\/3\/picklists\/72459a5f-7759-4cff-a8ac-fa673113c4d0",
                     "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
+                    "source": "Fortinet FortiSIEM",
                     "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
                     "severity": "{{\"Severity\" | picklist(vars.alert_data.incident_data.attributes.eventSeverityCat | capitalize, \"@id\")}}",
                     "sourceId": "{{vars.alert_data.incident_data.nid}}",
+                    "sourceIp": "{{(vars.alert_data.associated_events.event_details | flatten(levels=1)) | json_query(\"[].attributes.srcIpAddr\") | join(\", \") }}",
                     "__replace": "false",
                     "sourcedata": "{{vars.alert_data | toJSON}}",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -58,9 +59,10 @@
                     "priorityWeight": 1,
                     "bytesTransferred": "{{vars.alert_data.incident_data.attributes.incidentDetail}}",
                     "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
                     "alertRemainingAckSLA": 0
                 },
-                "_showJson": true,
+                "_showJson": false,
                 "operation": "Overwrite",
                 "collection": "\/api\/3\/upsert\/alerts",
                 "__recommend": [],
@@ -73,20 +75,8 @@
             "top": "240",
             "left": "380",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "uuid": "6f0ff476-f622-482a-ae0f-e5c03388043a"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Start",
-            "description": null,
-            "arguments": {
-                "step_variables": []
-            },
-            "status": null,
-            "top": "40",
-            "left": "40",
-            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-            "uuid": "745ee163-50c5-4b6b-bcf4-be8fb086932c"
+            "group": null,
+            "uuid": "60316400-fcd8-406c-af2b-96dc329920f1"
         },
         {
             "@type": "WorkflowStep",
@@ -99,44 +89,64 @@
             "top": "360",
             "left": "560",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "cdd9064f-7cdd-47db-b9c2-144f3efdf398"
+            "group": null,
+            "uuid": "f8ea9edd-c168-4e26-a8ea-b5d60181dad1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": []
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "ac34a7e9-e692-4c9a-b572-01fcd3ff3af2"
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Configuration -> Create Alert",
-            "targetStep": "\/api\/3\/workflow_steps\/6f0ff476-f622-482a-ae0f-e5c03388043a",
-            "sourceStep": "\/api\/3\/workflow_steps\/fc7c43c3-207c-42a1-a6e0-cd9307cf2495",
+            "targetStep": "\/api\/3\/workflow_steps\/60316400-fcd8-406c-af2b-96dc329920f1",
+            "sourceStep": "\/api\/3\/workflow_steps\/f92d68ba-1de4-4068-aa61-37a0598c6266",
             "label": null,
             "isExecuted": false,
-            "uuid": "fb9c20cc-a83d-423d-9bbb-ee80042e2945"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Start -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/fc7c43c3-207c-42a1-a6e0-cd9307cf2495",
-            "sourceStep": "\/api\/3\/workflow_steps\/745ee163-50c5-4b6b-bcf4-be8fb086932c",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "f69852d5-1ef1-42f2-b0f6-ddb8a353a9aa"
+            "group": null,
+            "uuid": "cf78dd90-ffba-4575-bd8c-187d2a846a89"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Create Alert -> Set Output",
-            "targetStep": "\/api\/3\/workflow_steps\/cdd9064f-7cdd-47db-b9c2-144f3efdf398",
-            "sourceStep": "\/api\/3\/workflow_steps\/6f0ff476-f622-482a-ae0f-e5c03388043a",
+            "targetStep": "\/api\/3\/workflow_steps\/f8ea9edd-c168-4e26-a8ea-b5d60181dad1",
+            "sourceStep": "\/api\/3\/workflow_steps\/60316400-fcd8-406c-af2b-96dc329920f1",
             "label": null,
             "isExecuted": false,
-            "uuid": "a267d58c-13c6-401f-9077-d7390617f348"
+            "group": null,
+            "uuid": "a493aead-ec29-4c2c-9b49-27c43cec04d2"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/f92d68ba-1de4-4068-aa61-37a0598c6266",
+            "sourceStep": "\/api\/3\/workflow_steps\/ac34a7e9-e692-4c9a-b572-01fcd3ff3af2",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "f318dedc-30c9-4dec-aac2-37ac51198d7b"
         }
     ],
+    "groups": [],
     "priority": null,
     "uuid": "37603f90-ab2c-42a0-b183-50e92fdd2fd1",
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "Referenced"
+        "Referenced",
+        "Scenario"
     ]
 }
